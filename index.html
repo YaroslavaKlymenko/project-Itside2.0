@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HOME</title>
     
-    <script type="module" crossorigin src="/project-Itside2.0/assets/styles-fac82e35.js"></script>
-    <link rel="stylesheet" href="/project-Itside2.0/assets/styles-a81c26c6.css">
+    <script type="module" crossorigin src="/project-Itside2.0/assets/index-847c79ea.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-Itside2.0/assets/styles-fac82e35.js">
+    <link rel="stylesheet" href="/project-Itside2.0/assets/styles-8742ad60.css">
   </head>
-
   <body>
     <header class="header">
   <div class="logo">
@@ -53,11 +53,10 @@
 </header>
 
 
-    <section class="section">
-      <div class="main-content">
-        <aside class="sidebar">
-          <div>
-            <div class="container">
+    <section class="home-page__flex">
+      <aside class="aside-flex">
+        <div>
+          <div class="container">
   <ul class="categories-list">
     <li class="categories-list__item active"><a href="#">All categories</a></li>
     <li class="categories-list__item"><a href="#">Categories Title</a></li>
@@ -93,10 +92,10 @@
   </ul>
 </div>
 
-          </div>
+        </div>
 
-          <div>
-            <section class="supportUA">
+        <div>
+          <section class="supportUA">
     <div class="support_wrap-title">
       <h3 class="support_title">Support Ukraine</h3>
       <svg class="support_gerb" width="20" height="32">
@@ -118,15 +117,36 @@
       </svg>
     </button>
   </section>
-          </div>
-        </aside>
-        <section class="section-bestsellers">
-  <div class="container-besrsellers">
-    <h2 class="title-section">Best Sellers <span class="titel-span">Books</span></h2>
-    <ul class="list-categories">
-      <li class="item-category">
-        <h3 class="title-category">Combined Print and E-Book Fiction</h3>
-        <ul class="list-books">
+        </div>
+      </aside>
+      <div class="container">
+  <div class="js-books-list books-wrapper">
+    <section class="section-bestsellers">
+      <div class="container-besrsellers">
+        <h2 class="title-section">
+          Best Sellers <span class="titel-span">Books</span>
+        </h2>
+        <ul class="list-categories">
+          <li class="item-category">
+            <h3 class="title-category">Combined Print and E-Book Fiction</h3>
+            <ul class="list-books">
+              <li class="item-book">
+                <a class="link-book" href="#">
+                  <img class="pict-book" src="" alt="description" />
+                  <h4 class="title-book">I will find you</h4>
+                  <p class="author">Harlan Coben</p>
+                </a>
+              </li>
+            </ul>
+            <button class="btn btn-seemore">See more</button>
+          </li>
+          <li class="item-book">
+            <a class="link-book" href="#">
+              <img class="pict-book" src="" alt="description">
+              <h4 class="title-book">I will find you</h4>
+              <p class="author">Harlan Coben</p>
+            </a>
+          </li>
           <li class="item-book">
             <a class="link-book" href="#">
               <img class="pict-book" src="" alt="description">
@@ -180,11 +200,283 @@
         <button class="btn btn-seemore">See more</button>
       </li>
 
-    </ul>
-
-  </div>
-</section>
+      <li class="item-category">
+        <h3 class="title-category">Combined Print and E-Book Fiction</h3>
+        <ul class="list-books">
+          <li class="item-book">
+            <a class="link-book" href="#">
+              <img class="pict-book" src="" alt="description">
+              <h4 class="title-book">I will find you</h4>
+              <p class="author">Harlan Coben</p>
+            </a>
+          </li>
+          <li class="item-book">
+            <a class="link-book" href="#">
+              <img class="pict-book" src="" alt="description">
+              <h4 class="title-book">I will find you</h4>
+              <p class="author">Harlan Coben</p>
+            </a>
+          </li>
+          <li class="item-book">
+            <a class="link-book" href="#">
+              <img class="pict-book" src="" alt="description">
+              <h4 class="title-book">I will find you</h4>
+              <p class="author">Harlan Coben</p>
+            </a>
+          </li>
+        </ul>
       </div>
+    </section>
+  </div>
+</div>
+
+      <!-- BOOK LIST -->
+<div class="container">
+  <h2 class="categories-list__title js-last-word">Category title</h2>
+  <ul class="books-list">
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+    <li class="book-list__item">
+      <a href="#">
+        <div class="book-thumb">
+          <img
+            class="book-img"
+            src="../img/picture-for-html.jpg"
+            width="335"
+            alt=""
+          />
+          <div class="book-overlay">quick view</div>
+        </div>
+        <h3 class="book-tittle">Book title</h3>
+        <p class="book-author">John Snow</p>
+      </a>
+    </li>
+  </ul>
+</div>
+
     </section>
 
     <!-- Loads the specified .html file -->
@@ -206,7 +498,6 @@
     </div>
 </div>
 </footer>
-
     
   </body>
 </html>

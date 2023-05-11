@@ -1,0 +1,1 @@
+import"./styles-fac82e35.js";const t=document.querySelector(".js-last-word"),o=t.innerHTML,e=o.split(" "),n=e[e.length-1],s=o.replace(n,"<span style='color:rgba(79, 46, 232, 1)'>"+n+"</span>");t.innerHTML=s;
