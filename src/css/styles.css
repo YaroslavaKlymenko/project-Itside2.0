@@ -67,7 +67,7 @@
   --text-color: #ffffff;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .aside-flex {
     display: flex;
   }
@@ -84,4 +84,4 @@
   .aside-flex {
     display: block;
   }
-}
+} */
