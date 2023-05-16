@@ -35,9 +35,9 @@ export const createMarkupShoppingList = arr =>
                     <div class="autor-link-shoppingList">
                         <p class="shop-book-autor">${author}</p>
                         <ul class="links-shoppingList">                  
-                        <li class="shop-book-link amazon-link"><a class="shop-a" href="${amazonUrl}"><img class="amazon" src=${amazonPng} alt="${amazon}"></a></li>
-                        <li class="shop-book-link apple-store-link"><a class="shop-a" href="${appleUrl}"><img class="apple-store" src=${appleStorePng} alt="${apple} "></a></li>
-                        <li class="shop-book-link book-shop-link"><a class="shop-a" href="${bookUrl}"><img class="book-shop" src=${bookShopPng} alt="${book} "></a></li>
+                        <li class="shop-book-link amazon-link"><a class="shop-a" href="${amazonUrl}"><img class="amazon" src="${amazonPng}" alt="${amazon}"></a></li>
+                        <li class="shop-book-link apple-store-link"><a class="shop-a" href="${appleUrl}"><img class="apple-store" src="${appleStorePng}" alt="${apple} "></a></li>
+                        <li class="shop-book-link book-shop-link"><a class="shop-a" href="${bookUrl}"><img class="book-shop" src="${bookShopPng}" alt="${book} "></a></li>
                         </ul>
                     </div> 
                     </div>
