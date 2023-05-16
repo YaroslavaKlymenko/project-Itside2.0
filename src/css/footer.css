@@ -467,6 +467,10 @@
   text-align: center;
   margin-bottom: 5px;
 }
+
+.developer-link {
+  cursor: pointer;
+}
 /* .footer-dev-job-dark {
   font-family: 'DM Sans Medium';
   font-style: normal;
