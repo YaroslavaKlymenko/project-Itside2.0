@@ -18,7 +18,7 @@ import fund9 from './../../img/support/fund9@1x.png';
 import fund9x2 from './../../img/support/fund9@2x.png';
 
 
-console.log(fund1);
+// console.log(fund1);
 export const fundsArray = [
   {
     title: 'Save the Children',
