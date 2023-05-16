@@ -20,6 +20,7 @@
 @import url('./authorization-modal.css');
 @import url('./authorization-backdrop.css');
 @import url('./pagination-shop-list.css');
+@import url('./scrollup.css');
 
 :root {
   font-family: 'DM Sans Regular', sans-serif;
