@@ -18,7 +18,8 @@ export const createMarkupShoppingList = arr =>
         ],
       }) =>
         `<li class="item-shoppingList  js-item-book js-item-book" id = '${id}'>
-                <img class="pict-shoppingList js-item-book" src="${bookImage}" alt="img"></img>
+   <div class="book-list-container js-item-book" id = '${id}'>         
+  <img class="pict-shoppingList js-item-book" src="${bookImage}" alt="img"></img>
                 <button type='button' class='delete-btn js-item-book' id= '${id}'>
                     </button>
                 <div class="content-container-shoppingList js-item-book">
@@ -34,13 +35,16 @@ export const createMarkupShoppingList = arr =>
                     <div>
                     <div class="autor-link-shoppingList">
                         <p class="shop-book-autor">${author}</p>
+                        <div class="shop-refs">
                         <ul class="links-shoppingList">                  
-                        <li class="shop-book-link amazon-link"><a class="shop-a" href="${amazonUrl}"><img class="amazon" src="${amazonPng}" alt="${amazon}"></a></li>
+                        <li class="shop-book-link amazon-link"><a class="shop-a" href="${amazonUrl}"><img class="amazon-png" src="${amazonPng}" alt="${amazon}"></a></li>
                         <li class="shop-book-link apple-store-link"><a class="shop-a" href="${appleUrl}"><img class="apple-store" src="${appleStorePng}" alt="${apple} "></a></li>
                         <li class="shop-book-link book-shop-link"><a class="shop-a" href="${bookUrl}"><img class="book-shop" src="${bookShopPng}" alt="${book} "></a></li>
                         </ul>
+                        </div>
                     </div> 
                     </div>
+                </div>
                 </div>
             </li>`
     )
