@@ -89,6 +89,7 @@ body {
   --H2-textcolor: #ffffff;
   --border-color: #ffffff;
   --main-textcolor: #ffffff;
+  --hover-button: rgb(234, 198, 69);
 }
 
 @media (min-width: 768px) {

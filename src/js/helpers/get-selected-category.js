@@ -98,8 +98,8 @@ function createMarkupSelectCategory(arr_select_books) {
   return arr_select_books
     .map(
       ({ author, book_image, title, _id }) =>
-        `<li class="item-book-select" >
-          <div class="book-thumb js-item-book" data-id="${_id}">
+        `<li class="item-book-select" data-id="${_id}" >
+          <div class="book-thumb js-item-book" >
             <img class="pict-book" src="${book_image}" alt="${title}">
             <div class="book-overlay js-item-book">quick view</div>
           </div>

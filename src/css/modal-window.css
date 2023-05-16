@@ -33,7 +33,7 @@
         left: 50%;
         width: 335px;
         max-width: 100%;
-        height: 806px;
+        height: 835px;
         transform: translate(-50%, -50%) scale(0.9);
         transition: transform var(--defolt-animation);
         background-color: rgba(252, 252, 252, 1);
@@ -59,6 +59,8 @@
         bottom: 62px;
         white-space: nowrap;
         position: absolute;
+        font-size: 90%;
+        margin-top: 40px;
     }
     .modal-btn {
         position: absolute;
@@ -95,24 +97,45 @@
         text-align: center;
         letter-spacing: -0.04em;
         color: rgba(17, 17, 17, 0.5);
-        margin-top: 8px;
+        margin-top: 45px;
+        display: none;
     }
     .modal-content-titl {
-        margin-top: 14px;
-        height: 18px;
+        font-style: normal;
+        font-weight: 500;
         font-size: 16px;
-        text-transform: uppercase;
+        line-height: 18px;
+        letter-spacing: -0.04em;
+        color: var(--H2-textcolor);
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin-top: 14px;
     }
     .modal-content-autur {
         width: 79px;
         height: 14px;
+        font-family: 'DM Sans';
         font-style: italic;
+        font-weight: 400;
         font-size: 12px;
-        color: var(--main-textcolor);
+        line-height: 14px;
+        letter-spacing: -0.04em;
+        color: #B4AFAF;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
         margin-top: 4px;
     }
     .modal-content-abst {
         width: 287px;
+        left: 24px;
+        top: 516px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 18px;
+        letter-spacing: -0.04em;
+        color: var(--H2-textcolor);
         margin-top: 18px;
     }
     .modal-link {
@@ -137,7 +160,6 @@
         position: absolute;
         height: 46px;
         top: 676px;
-        margin-top: 10px;
         border: 2px solid var(--main-color);
         border-radius: 40px;
         cursor: pointer;
@@ -218,6 +240,7 @@
   .rem-modal-btn {
       width: 499px;
       left: 40px;
+      margin: 0;
   }
   .add-modal-btn,
   .rem-modal-btn {
@@ -246,14 +269,16 @@
       color: var(--background-header);
   }
   .modal-content-titl {
-      width: 192px;
-      height: auto;
-      font-weight: 700;
-      font-size: 24px;
-      margin-top: 0;
-      line-height: 1.12;
-      letter-spacing: -0.04em;
+    font-style: normal;
+    font-weight: 350;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.04em;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
       color: var(--H2-textcolor);
+      margin-top: 0;
   }
   .modal-content-autur {
       width: 92px;
@@ -280,7 +305,7 @@
     line-height: 14px;
     text-align: center;
     letter-spacing: -0.04em;
-    
+    margin-top: 8px;
     color: rgba(17, 17, 17, 0.5);
   }
   .modal-link {
@@ -290,7 +315,22 @@
   }
 }
 
-
 .add-to-cart{
     display: none;
+}
+.amazon{
+    width: 62px;
+    height: 19px;
+    margin-top: 8.5px;
+    margin-bottom: 8.5px;
+}
+.apple{
+    width: 33px;
+    height: 32px;
+    margin: 0;
+}
+.shop{
+    width: 38px;
+    height: 36px;
+    margin: 0;
 }
