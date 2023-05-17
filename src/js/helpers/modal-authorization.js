@@ -1,3 +1,5 @@
+import {  checkUserAuth } from "./sign-in-modal";
+
 const registerModalOpenBtn = document.querySelector('[data-modal-open]');
 const modalCloseBtn = document.querySelector('[data-modal-close]');
 const modal = document.querySelector('[data-modal]');
@@ -44,10 +46,11 @@ const signUpForm = document.querySelector('#sign-up');
 
 btnSingIn.addEventListener('click', e => {
   e.preventDefault();
-  btnSingUp.classList.remove('active-link');
+  console.log(e)
   btnSingUp.classList.add('desactive-link');
-  btnSingIn.classList.remove('desactive-link');
+  btnSingUp.classList.remove('active-link');
   btnSingIn.classList.add('active-link');
+  btnSingIn.classList.remove('desactive-link');
   autorizationBtnEl.textContent = 'Sign in';
 
   signInForm.classList.remove('display-form');
@@ -59,6 +62,7 @@ btnSingIn.addEventListener('click', e => {
 
 btnSingUp.addEventListener('click', e => {
   e.preventDefault();
+  console.log(e)
   btnSingUp.classList.add('active-link');
   btnSingUp.classList.remove('desactive-link');
   btnSingIn.classList.add('desactive-link');
@@ -81,3 +85,5 @@ userBar.addEventListener('click', handleUserBarBtnClick);
 function handleUserBarBtnClick() {
   userBar.classList.toggle('is-active');
 }
+
+autorizationBtnEl.addEventListener ("click", () => checkUserAuth())

@@ -49,6 +49,7 @@
 
 body {
   background: var(--background-main);
+  min-height: 100vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
