@@ -3,6 +3,9 @@ import changeLastWordColor from './helpers/last-word-color';
 import { addLoader, removeLoader } from './helpers/loader';
 import * as basicLightbox from 'basiclightbox';
 import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
+import amazonPng from './../../img/icon-book-store/amazon.png';
+import appleStorePng from './../../img/icon-book-store/apple-store.png';
+import bookShopPng from './../../img/icon-book-store/book-shop.png';
 
 const URL = 'https://books-backend.p.goit.global/books/category?category=';
 const FOR_BOOK_URL = 'https://books-backend.p.goit.global/books/';
@@ -102,14 +105,14 @@ function onBookListClick(e) {
               <ul class="new-modal-buy-link">
               <li>
                 <a href="${amazon}" target="blank"
-                  ><img src="../img/icon-book-store/amazon.png" alt="amazon"
+                  ><img src="${amazonUrl}" alt="amazon"
                 /></a>
               </li>
               <li>
-                <a href="${appleBook}" target="blank"><img src="./img/icon-book-store/apple-store.png" alt="" /></a>
+                <a href="${appleBook}" target="blank"><img src="${appleUrl}" alt="" /></a>
               </li>
               <li>
-                <a href="${bookShop}" target="blank"><img src="./img/icon-book-store/book-shop.png" alt="" /></a>
+                <a href="${bookShop}" target="blank"><img src="${bookUrl}" alt="" /></a>
               </li>
             </ul>
             </div>
