@@ -89,30 +89,47 @@ function onBookListClick(e) {
         const amazon = findedBook.buy_links[0].url;
         const appleBook = findedBook.buy_links[1].url;
         const bookShop = findedBook.buy_links[4].url;
-        const instance = basicLightbox.create(`
+        const instance = basicLightbox.create(
+          `
 	    <div class="new-modal">
-        <img class="new-modal-img" src="${findedBook.book_image}" alt="" width="287" />
-        <h3 class="new-modal-book-title">${findedBook.title}</h3>
-        <p class = "new-modal-book-author">${findedBook.author}</p>
-        <p class="new-modal-book-description">${findedBook.description}</p>
-        <ul class="new-modal-buy-link">
-          <li>
-            <a href="${amazon}" target="blank"
-              ><img src="./img/icon-book-store/amazon.png" alt="amazon"
-            /></a>
-          </li>
-          <li>
-            <a href="${appleBook}" target="blank"><img src="./img/icon-book-store/apple-store.png" alt="" /></a>
-          </li>
-          <li>
-            <a href="${bookShop}" target="blank"><img src="./img/icon-book-store/book-shop.png" alt="" /></a>
-          </li>
-        </ul>
-        <button>add to shopping list</button>
+        <div class="new-modal-container">
+          <div class="new-modal-book-flex">
+            <img class="new-modal-img" src="${findedBook.book_image}" alt="" width="287" />
+            <div class="new-book-modal-info">
+              <h3 class="new-modal-book-title">${findedBook.title}</h3>
+              <p class = "new-modal-book-author">${findedBook.author}</p>
+              <p class="new-modal-book-description">${findedBook.description}</p>
+              <ul class="new-modal-buy-link">
+              <li>
+                <a href="${amazon}" target="blank"
+                  ><img src="../img/icon-book-store/amazon.png" alt="amazon"
+                /></a>
+              </li>
+              <li>
+                <a href="${appleBook}" target="blank"><img src="./img/icon-book-store/apple-store.png" alt="" /></a>
+              </li>
+              <li>
+                <a href="${bookShop}" target="blank"><img src="./img/icon-book-store/book-shop.png" alt="" /></a>
+              </li>
+            </ul>
+            </div>
+          </div>
+          <button class="new-book-modal-btn">add to shopping list</button>
+        </div>
 </div>
 
-`);
+`,
+          {
+            onShow: () => document.addEventListener('keydown', onKeyPress),
+            onClose: () => document.removeEventListener('keydown', onKeyPress),
+          }
+        );
         instance.show();
+        function onKeyPress(evt) {
+          if (evt.code === 'Escape') {
+            instance.close();
+          }
+        }
       })
       .catch(err => console.log(err));
   }

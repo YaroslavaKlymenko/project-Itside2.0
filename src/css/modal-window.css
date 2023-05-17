@@ -377,3 +377,128 @@
   height: 36px;
   margin: 0;
 }
+
+.new-modal-container {
+  width: 287px;
+  margin: 0 auto;
+}
+
+.new-modal {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 18px;
+  width: 335px;
+  height: 600px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .new-modal {
+    width: 579px;
+    height: 465px;
+    overflow-y: hidden;
+  }
+
+  .new-modal-container {
+    width: 500px;
+  }
+  .new-modal-book-flex {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+
+  .new-book-modal-info {
+    margin-top: 40px;
+  }
+
+  .new-modal-img {
+    width: 192px;
+    max-height: 280px;
+    margin: 0;
+  }
+
+  .new-book-modal-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.8px) {
+  .new-modal-img {
+    margin: 40px auto;
+    border-radius: 18px;
+    margin-bottom: 14px;
+  }
+}
+
+.new-modal-img {
+  margin-bottom: 14px;
+}
+
+.new-modal-book-title {
+  font-family: 'DM Sans Bold';
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  color: var(--main-textcolor);
+
+  margin-bottom: 4px;
+}
+
+.new-modal-book-author {
+  font-family: 'DM Sans Italic';
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
+
+  margin-bottom: 18px;
+}
+
+.new-modal-book-description {
+  font-family: 'DM Sans Regular';
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  margin-bottom: 22.5px;
+}
+
+.new-modal-buy-link {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.new-modal-buy-link li {
+  filter: grayscale(100%);
+  margin-bottom: 40px;
+}
+
+.new-book-modal-btn {
+  font-family: 'DM Sans Bold';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+
+  color: #111111;
+  background-color: white;
+  margin: 0 auto;
+  padding: 14px 28px;
+
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  display: block;
+  margin-bottom: 40px;
+  transition: var(--defolt-animation);
+}
+
+.new-book-modal-btn:hover,
+.new-book-modal-btn:focus {
+  background: #4f2ee8;
+  color: white;
+}
