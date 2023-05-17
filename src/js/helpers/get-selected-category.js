@@ -1,5 +1,5 @@
 import Notiflix from 'notiflix';
-import { openModal } from './modal-window';
+// import { openModal } from './modal-window';
 import { getBookById } from './get-data';
 import { listCategories, titleSection, BASE_URL } from './get-bestsellers';
 export const listSelectCategory = document.querySelector('.js-books-list');
@@ -12,7 +12,7 @@ export function onLoadOneCategory(evt) {
     const bookCard = evt.target.closest('.item-book');
 
     const bookId = bookCard.dataset.id;
-    getBookById(bookId).then(data => openModal(data));
+    // getBookById(bookId).then(data => openModal(data));s
   }
   // перевіряємо клік по кнопке
   if (evt.target.nodeName !== 'BUTTON') {
@@ -98,10 +98,10 @@ function createMarkupSelectCategory(arr_select_books) {
   return arr_select_books
     .map(
       ({ author, book_image, title, _id }) =>
-        `<li class="item-book-select" data-id="${_id}" >
+        `<li class="item-book-select js-book-card" data-id="${_id}" >
           <div class="book-thumb js-item-book" >
-            <img class="pict-book" src="${book_image}" alt="${title}">
-            <div class="book-overlay js-item-book">quick view</div>
+            <img class="pict-book js-open-modal-click" src="${book_image}" alt="${title}">
+            <div class="book-overlay js-item-book js-open-modal-click">quick view</div>
           </div>
           <h4 class="title-book">${title}</h4>
           <p class="author">${author}</p>

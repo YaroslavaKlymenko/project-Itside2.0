@@ -2,7 +2,7 @@ import { getBookById } from './get-data';
 import { Notify } from 'notiflix';
 import scrollLock from 'scroll-lock';
 
-const modalBtnCls = document.querySelector(".modal-btn");
+const modalBtnCls = document.querySelector('.modal-btn');
 const modal = document.querySelector('.backdrop');
 const modalContentBody = document.querySelector('.modal-content-body');
 const bookItems = document.querySelector('.js-list-books');
@@ -81,7 +81,7 @@ function closeModal() {
   document.removeEventListener('keydown', handleKeyDown);
 }
 
-modal.addEventListener('click', (e) => {
+modal.addEventListener('click', e => {
   if (e.target === modal) {
     closeModal();
   }
@@ -101,35 +101,33 @@ function toggleShoppingList() {
   if (addToShopBtn.classList.contains('openmodal-btn')) {
     addToShoppingList();
   } else {
-  removeFromShoppingList();
+    removeFromShoppingList();
   }
-  }
-  
-  function saveShoppingTrash() {
+}
+
+function saveShoppingTrash() {
   shoppingList.push(shoppingBook);
   localStorage.setItem('shopping-trash', JSON.stringify(shoppingList));
   //onOpenFunc();
-  }
-  
-  function addToShoppingList() {
+}
+
+function addToShoppingList() {
   addToShopBtn.textContent = 'Remove from the shopping list';
   modalText.style.display = 'block';
   addToShopBtn.classList.remove('openmodal-btn');
   addToShopBtn.classList.add('closemodal-btn');
   saveShoppingTrash();
-  }
-  
-  function removeFromShoppingList() {
+}
+
+function removeFromShoppingList() {
   addToShopBtn.textContent = 'Add to shopping list';
   modalText.style.display = 'none';
   addToShopBtn.classList.remove('closemodal-btn');
   addToShopBtn.classList.add('openmodal-btn');
   removeShoppingTrash();
-  }
-  
-  function removeShoppingTrash() {
-  shoppingList = shoppingList.filter((item) => item.id !== shoppingBook.id);
-  localStorage.setItem('shopping-trash', JSON.stringify(shoppingList));
-  }
+}
 
-  export {shoppingList};
+function removeShoppingTrash() {
+  shoppingList = shoppingList.filter(item => item._id !== shoppingBook._id);
+  localStorage.setItem('shopping-trash', JSON.stringify(shoppingList));
+}
