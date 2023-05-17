@@ -275,9 +275,34 @@
   }
 }
 
-@media (width: 320px) {
+@media screen and (max-width: 374.98px) {
   .shop-book-title {
-    font-size: 12px;
+  font-size: 12px; 
+  width: 113px;
+  height: 14px;
+  overflow: hidden;
+  }
+.shop-book-title:hover {
+  height: auto;
+  cursor: pointer;
+}
+.discription-shoppinglist{
+  font-size: 12px; 
+  width: 140px;
+  height: 39px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+.amazon{
+  width: 32px;
+  height: 11px;
+}
+.delete-btn{
+  border-radius: 50%;
+}
   }
 
   .title-shoppingList .shop-sub-title {
@@ -291,7 +316,7 @@
   .autor-link-shoppingList .shop-book-autor {
     font-size: 5px;
   }
-}
+
 
 @media screen and (min-width: 1440px) {
   .discription-shoppinglist {
