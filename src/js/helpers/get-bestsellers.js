@@ -4,7 +4,7 @@ import { addLoader, removeLoader } from '../helpers/loader';
 export const listCategories = document.querySelector('.js-books-list');
 
 export const titleSection = document.querySelector('.js-category-title');
-export const BASE_URL = 'https://books-backend.p.goit.global/books';
+export const BASE_URL = 'https://books-backend.p.goit.global/books/';
 
 async function getBooksBestsellers() {
   addLoader();
@@ -46,10 +46,10 @@ export function createMarkupOneCategory(arr_books) {
   return arr_books
     .map(
       ({ author, book_image, title, _id }) =>
-        `<li class="item-book js-item-book" data-id="${_id}">
+        `<li class="item-book js-item-book js-book-card" data-id="${_id}">
           <div class="book-thumb js-item-book">
-           <img class="pict-book js-item-book" src="${book_image}" alt="${title}">
-           <div class="book-overlay js-item-book">quick view</div>
+           <img class="pict-book js-item-book  js-open-modal-click" src="${book_image}" alt="${title}">
+           <div class="book-overlay js-item-book js-open-modal-click">quick view</div>
           </div>
           <h4 class="title-book js-item-book">${title}</h4>
           <p class="author js-item-book">${author}</p>
