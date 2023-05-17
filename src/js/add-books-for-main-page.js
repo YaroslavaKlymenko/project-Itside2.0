@@ -98,14 +98,14 @@ function onBookListClick(e) {
         <ul class="new-modal-buy-link">
           <li>
             <a href="${amazon}" target="blank"
-              ><img src="../img/icon-book-store/amazon.png" alt="amazon"
+              ><img src="./img/icon-book-store/amazon.png" alt="amazon"
             /></a>
           </li>
           <li>
-            <a href="${appleBook}" target="blank"><img src="../img/icon-book-store/apple-store.png" alt="" /></a>
+            <a href="${appleBook}" target="blank"><img src="./img/icon-book-store/apple-store.png" alt="" /></a>
           </li>
           <li>
-            <a href="${bookShop}" target="blank"><img src="../img/icon-book-store/book-shop.png" alt="" /></a>
+            <a href="${bookShop}" target="blank"><img src="./img/icon-book-store/book-shop.png" alt="" /></a>
           </li>
         </ul>
         <button>add to shopping list</button>
