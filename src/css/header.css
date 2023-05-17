@@ -13,32 +13,36 @@
   padding: 22px 0 22px 0;
   margin-bottom: 40px;
   position: relative;
+  z-index: 200000;
 }
 
 @media (max-width: 767.98px) {
   .main-menu {
-    display: none;
+    transform: translateY(-120%);
     position: absolute;
     z-index: 100000;
     top: 100%;
     right: 0;
     width: 100vw;
-    height: 100vh;
-    background-image: url(../img/bgimg-menu.png), radial-gradient(
-      183.6% 183.01% at 59.76% -23.42%,
-      #4f2ee8 18.03%,
-      #ffffff 100%);
+    height: 93vh;
+    background-image: url(../img/bgimg-menu.png),
+      radial-gradient(
+        183.6% 183.01% at 59.76% -23.42%,
+        #4f2ee8 18.03%,
+        #ffffff 100%
+      );
     background-repeat: no-repeat;
-    /* background-size: cover; */
+    background-size: contain;
     background-position-x: center;
-    background-position-y:bottom;
+    background-position-y: bottom;
+    transition: var(--defolt-animation);
+    overflow: hidden;
   }
 }
 
 .main-menu.is-menu-open {
-  display: block;
+  transform: translateY(0);
 }
-
 
 @media (max-width: 767.98px) {
   .header-nav {
@@ -156,7 +160,6 @@ input:checked + .slider:before {
   margin-right: 8px;
   transition: all var(--defolt-animation);
 }
-
 
 /* MAIN CSS*/
 
@@ -446,20 +449,17 @@ input:checked + .slider:before {
   display: none;
 }
 
-
 /* SIGN BTN AFTER AUTHORIZATION */
 
 .user-bar {
   display: none;
 }
-  @media screen and (min-width: 768px) {
-    .user-bar {
+@media screen and (min-width: 768px) {
+  .user-bar {
     position: relative;
     display: block;
   }
 }
-
-
 
 .user-bar-btn {
   position: relative;
@@ -497,7 +497,6 @@ input:checked + .slider:before {
   overflow: hidden;
 }
 
-
 .dropdown {
   position: absolute;
   top: 50%;
@@ -529,11 +528,9 @@ input:checked + .slider:before {
     transform: scale(1, -1);
   } */
 
-
 .dropdown-list__item {
   width: 100%;
 }
-
 
 .log-out-btn {
   display: flex;
@@ -565,8 +562,8 @@ input:checked + .slider:before {
 .sign-up-btn {
   display: none;
 }
-  @media screen and (min-width: 768px) {
-    .sign-up-btn {
+@media screen and (min-width: 768px) {
+  .sign-up-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -579,7 +576,6 @@ input:checked + .slider:before {
     cursor: pointer;
   }
 }
-
 
 .sign-up-btn__text {
   font-weight: 500;
