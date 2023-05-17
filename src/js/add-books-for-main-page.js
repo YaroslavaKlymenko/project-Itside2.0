@@ -89,10 +89,6 @@ function onBookListClick(e) {
         const amazon = findedBook.buy_links[0].url;
         const appleBook = findedBook.buy_links[1].url;
         const bookShop = findedBook.buy_links[4].url;
-
-        console.log(amazon, appleBook, bookShop);
-
-        console.log(findedBook);
         const instance = basicLightbox.create(`
 	    <div class="new-modal">
         <img class="new-modal-img" src="${findedBook.book_image}" alt="" width="287" />
