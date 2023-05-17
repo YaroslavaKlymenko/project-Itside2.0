@@ -56,7 +56,7 @@ function createMarkupForBooksByCategory(arr) {
     .map(
       ({ book_image, title, list_name, author, _id }) => `
         <li class="book-list__item" data-id="${_id}" >
-            <a  href="#">
+            <a  href=" ">
                 <div class="book-thumb" >
                     <img
                     class="book-img"
