@@ -4,7 +4,7 @@ import './helpers/aside-support';
 import './helpers/pagination-shop-list';
 import { createMarkupShoppingList } from './helpers/markup-shop-list';
 import { paginationMarcup } from '../js/helpers/pagination-shop-list';
-// import {shoppingList} from './helpers/modal-window';
+import {shoppingList} from './helpers/modal-window';
 
 const ulShoppingList = document.querySelector('.ulShoppingList');
 let screenWidth = window.innerWidth;
