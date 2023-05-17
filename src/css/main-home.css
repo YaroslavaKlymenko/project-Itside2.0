@@ -116,6 +116,7 @@
     height: 256px;
   }
 }
+
 .title-book {
   margin-bottom: 4px;
   margin-left: 4px;
@@ -166,6 +167,7 @@
   .item-book:not(:first-child) {
     display: block;
   }
+
   .item-book:nth-child(n + 4) {
     display: none;
   }
@@ -185,9 +187,11 @@
   .item-book {
     width: 180px;
   }
+
   .item-book:nth-child(n + 4) {
     display: block;
   }
+
   .item-book:nth-child(n + 6) {
     display: none;
   }
@@ -289,6 +293,7 @@
 
   .book-list__item {
     flex-basis: calc((100% - 75px) / 3);
+    cursor: pointer;
   }
 }
 
@@ -296,6 +301,7 @@
   .books-list {
     grid-gap: 40px 24px;
   }
+
   .book-list__item {
     flex-basis: calc((100% - 96px) / 5);
   }
@@ -367,6 +373,7 @@
     width: 218px;
   }
 }
+
 @media (min-width: 1440px) {
   .book-thumb {
     height: 256px;
@@ -396,7 +403,7 @@
   justify-content: center;
 }
 
-.book-list__item a:hover .book-overlay {
+.book-list__item:hover .book-overlay {
   transform: translateY(-100%);
 }
 

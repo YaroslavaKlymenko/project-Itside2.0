@@ -1,35 +1,37 @@
-import { getBookById } from './get-data';
-import { Notify } from 'notiflix';
-import scrollLock from 'scroll-lock';
+import { getBookById } from "./get-data";
+import { Notify } from "notiflix";
+import scrollLock from "scroll-lock";
 
-const modalBtnCls = document.querySelector('.modal-btn');
-const modal = document.querySelector('.backdrop');
-const modalContentBody = document.querySelector('.modal-content-body');
-const bookItems = document.querySelector('.js-list-books');
-const URL = 'https://books-backend.p.goit.global/books/category?category=';
+const modalBtnCls = document.querySelector(".modal-btn");
+const modal = document.querySelector(".backdrop");
+const modalContentBody = document.querySelector(".modal-content-body");
+const addToShopBtn = document.querySelector(".add-modal-btn");
+const modalText = document.querySelector(".modal-text");
+const bookItems = document.querySelector(".js-list-books");
+const URL = "https://books-backend.p.goit.global/books/category?category=";
 const bookGet = {
-  getBookById,
+    getBookById
 };
 
 let shoppingList = [];
 let shoppingBook = {};
 
-shoppingList = JSON.parse(localStorage.getItem('shopping-trash'));
+shoppingList = JSON.parse(localStorage.getItem("shopping-trash"));
 
 if (shoppingList === null) {
-  shoppingList = [];
+    shoppingList = [];
 }
 
 function disableScroll() {
-  scrollLock.disablePageScroll();
+    scrollLock.disablePageScroll();
 }
 
 function enableScroll() {
-  scrollLock.enablePageScroll();
+    scrollLock.enablePageScroll();
 }
 
 function modalCartBoock(book) {
-  return `
+    return `
     <div class="modal-content-card">
       <div class="modal-content-img">
         <img class='modal-content-pict' src="${book.bookImage}" alt="${book.title}"  />
@@ -60,74 +62,89 @@ function modalCartBoock(book) {
 }
 
 function renderBooksCard(book) {
-  modalContentBody.innerHTML = modalCartBoock(book);
+    modalContentBody.innerHTML = modalCartBoock(book);
 }
 
 export async function openModal(bookId) {
-  modalBtnCls.addEventListener('click', closeModal);
-  modal.classList.remove('hi-backdrop');
+    modalBtnCls.addEventListener("click", closeModal);
+    modal.classList.remove("hi-backdrop");
 
-  disableScroll();
-  document.addEventListener('keydown', handleKeyDown);
+    disableScroll();
+    document.addEventListener("keydown", handleKeyDown);
 
-  renderBooksCard(bookId);
-  shoppingBook = bookId;
+    renderBooksCard(bookId);
+    shoppingBook = bookId;
+    let chosenBookIds =
+        JSON.parse(localStorage.getItem("shopping-trash"))?.map((bookObj) => {
+            return bookObj.id;
+        }) ?? [];
+    if (chosenBookIds.includes(bookId.id)) {
+        addToShopBtn.textContent = "Remove from the shopping list";
+        modalText.style.display = "block";
+        addToShopBtn.classList.remove("openmodal-btn");
+        addToShopBtn.classList.add("closemodal-btn");
+    } else {
+        addToShopBtn.textContent = "Add to shopping list";
+        modalText.style.display = "none";
+        addToShopBtn.classList.remove("closemodal-btn");
+        addToShopBtn.classList.add("openmodal-btn");
+    }
 }
 
 function closeModal() {
-  modalBtnCls.removeEventListener('click', closeModal);
-  modal.classList.add('hi-backdrop');
-  enableScroll();
-  document.removeEventListener('keydown', handleKeyDown);
+    modalBtnCls.removeEventListener("click", closeModal);
+    modal.classList.add("hi-backdrop");
+    enableScroll();
+    document.removeEventListener("keydown", handleKeyDown);
 }
 
-modal.addEventListener('click', e => {
-  if (e.target === modal) {
-    closeModal();
-  }
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        closeModal();
+    }
 });
 
 function handleKeyDown(e) {
-  if (e.key === 'Escape') {
-    closeModal();
-  }
+    if (e.key === "Escape") {
+        closeModal();
+    }
 }
 
-const addToShopBtn = document.querySelector('.add-modal-btn');
-const modalText = document.querySelector('.modal-text');
-addToShopBtn.addEventListener('click', toggleShoppingList);
+addToShopBtn.addEventListener("click", toggleShoppingList);
 
 function toggleShoppingList() {
-  if (addToShopBtn.classList.contains('openmodal-btn')) {
-    addToShoppingList();
-  } else {
-    removeFromShoppingList();
-  }
+    if (addToShopBtn.classList.contains("openmodal-btn")) {
+        addToShoppingList();
+    } else {
+        removeFromShoppingList();
+    }
 }
 
 function saveShoppingTrash() {
-  shoppingList.push(shoppingBook);
-  localStorage.setItem('shopping-trash', JSON.stringify(shoppingList));
-  //onOpenFunc();
+    shoppingList.push(shoppingBook);
+    localStorage.setItem("shopping-trash", JSON.stringify(shoppingList));
+    //onOpenFunc();
 }
 
 function addToShoppingList() {
-  addToShopBtn.textContent = 'Remove from the shopping list';
-  modalText.style.display = 'block';
-  addToShopBtn.classList.remove('openmodal-btn');
-  addToShopBtn.classList.add('closemodal-btn');
-  saveShoppingTrash();
+    addToShopBtn.textContent = "Remove from the shopping list";
+    modalText.style.display = "block";
+    addToShopBtn.classList.remove("openmodal-btn");
+    addToShopBtn.classList.add("closemodal-btn");
+    saveShoppingTrash();
 }
 
 function removeFromShoppingList() {
-  addToShopBtn.textContent = 'Add to shopping list';
-  modalText.style.display = 'none';
-  addToShopBtn.classList.remove('closemodal-btn');
-  addToShopBtn.classList.add('openmodal-btn');
-  removeShoppingTrash();
+    addToShopBtn.textContent = "Add to shopping list";
+    modalText.style.display = "none";
+    addToShopBtn.classList.remove("closemodal-btn");
+    addToShopBtn.classList.add("openmodal-btn");
+    removeShoppingTrash();
 }
 
 function removeShoppingTrash() {
-  shoppingList = shoppingList.filter(item => item._id !== shoppingBook._id);
-  localStorage.setItem('shopping-trash', JSON.stringify(shoppingList));
+    shoppingList = shoppingList.filter((item) => item.id !== shoppingBook.id);
+    localStorage.setItem("shopping-trash", JSON.stringify(shoppingList));
 }
+
+export { shoppingList };
