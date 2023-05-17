@@ -13,7 +13,9 @@
   padding: 22px 0 22px 0;
   margin-bottom: 40px;
   position: relative;
+
   z-index: 200000;
+
 }
 
 @media (max-width: 767.98px) {
@@ -34,14 +36,18 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position-x: center;
+
     background-position-y: bottom;
     transition: var(--defolt-animation);
     overflow: hidden;
+
   }
 }
 
 .main-menu.is-menu-open {
+
   transform: translateY(0);
+
 }
 
 @media (max-width: 767.98px) {
