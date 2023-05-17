@@ -384,8 +384,8 @@
 }
 
 .new-modal {
-  background: #ffffff;
-  border: 2px solid #000000;
+  background: var(--background-main);
+  border: 2px solid var(--border-color);
   border-radius: 18px;
   width: 335px;
   height: 600px;
@@ -463,6 +463,7 @@
   line-height: 1.29;
   letter-spacing: -0.04em;
   margin-bottom: 22.5px;
+  color: var(--border-color);
 }
 
 .new-modal-buy-link {
@@ -485,8 +486,8 @@
   letter-spacing: -0.01em;
   text-transform: uppercase;
 
-  color: #111111;
-  background-color: white;
+  color: var(--border-color);
+  background-color: var(--background-main);
   margin: 0 auto;
   padding: 14px 28px;
 
