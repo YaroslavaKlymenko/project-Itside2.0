@@ -443,7 +443,7 @@
   color: var(--border-color);
 }
 @media (max-width: 1439.98px) {
-  .supportUA {
+  .support-shop {
     display: none;
   }
 }
