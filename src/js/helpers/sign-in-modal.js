@@ -34,8 +34,8 @@ async function handelSignInUserAccount(e) {
 
   async function signInUserAccount(auth, userEmail, userPassword) {
     try {
-    await signInWithEmailAndPassword(auth, userEmail, userPassword)
-
+    signInWithEmailAndPassword(auth, userEmail, userPassword)
+   .then((obj) => console.log(obj))
         backdrop.style.display = 'none';
         backdrop.classList.add('is-hidden');
         logInBtn.classList.add('visually-hidden');
@@ -54,9 +54,11 @@ async function handelSignInUserAccount(e) {
     onAuthStateChanged(auth, user => {
       if (user) {
         const userNameRef = ref(db, 'users/' + user.uid);
+        console.log(userNameRef.name);
         onValue(userNameRef, name => {
           const currentUserName = name.exportVal();
           userBarBtnText.innerHTML = currentUserName.username;
+          console.log(currentUserName)
         });
         userBar.classList.remove('visually-hidden');
         logInBtn.classList.add('visually-hidden');
@@ -67,10 +69,13 @@ async function handelSignInUserAccount(e) {
     });
   }
   checkUserAuth();
+  
+
 
   const signInForm = document.querySelector('#sign-in');
   signInForm.addEventListener('submit', (event) => {
     event.preventDefault();
+    console.log("text");
     handelSignInUserAccount(event);
 });
 
@@ -93,3 +98,10 @@ headerNav.classList.add('is-hidden');
       });
   }
   
+  const userBarBtn = document.querySelector('.js-user-bar-btn');
+
+  userBarBtn.addEventListener('click', () => {
+    userBarBtn.classList.toggle('is-active');
+  });
+
+  export { checkUserAuth }
