@@ -49,6 +49,7 @@
 
   .emptyList {
     margin-left: 355px;
+    color: var(--main-textcolor);
   }
 }
 
