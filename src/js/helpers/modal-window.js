@@ -1,6 +1,9 @@
 import { getBookById } from "./get-data";
 import { Notify } from "notiflix";
 import scrollLock from "scroll-lock";
+import amazonPng from './../../img/icon-book-store/amazon.png';
+import appleStorePng from './../../img/icon-book-store/apple-store.png';
+import bookShopPng from './../../img/icon-book-store/book-shop.png';
 
 const modalBtnCls = document.querySelector(".modal-btn");
 const modal = document.querySelector(".backdrop");
@@ -43,17 +46,17 @@ function modalCartBoock(book) {
         <ul class="modal-link">
           <li>
             <a class="modal-link amazon" href="${book.buyLinks[0].url}" target="_blank">
-              <img class="modal-link-icon" src="./img/icon-book-store/amazon.png" alt="amazon" width="62" height="19"></img>
+              <img class="modal-link-icon" src="${amazonPng}"19"></img>
             </a>
           </li>
           <li>
             <a class="modal-link apple" href="${book.buyLinks[1].url}" target="_blank">
-              <img class="modal-link-icon" src="./img/icon-book-store/apple-store.png" alt="apple shop" width="33" height="32"></img>
+              <img class="modal-link-icon" src="${appleStorePng}" alt="apple shop" width="33" height="32"></img>
             </a>
           </li>
           <li>
             <a class="modal-link shop" href="${book.buyLinks[2].url}" target="_blank">
-              <img class="modal-link-icon" src="./img/icon-book-store/book-shop.png" alt="book shop" width="38" height="36"></img>
+              <img class="modal-link-icon" src="${bookShopPng}" alt="book shop" width="38" height="36"></img>
             </a>
           </li>
         </ul>
