@@ -28,8 +28,6 @@ export const createMarkupShoppingList = arr =>
                             <h3 class="shop-book-title">${title}</h3>
                             <p class="shop-sub-title">${categoryName}</p>
                         </div>
-                        
-                        
                     </div>
                     <p class="discription-shoppinglist">${description}</p>
                     <div>

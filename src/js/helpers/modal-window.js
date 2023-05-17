@@ -128,6 +128,8 @@ function toggleShoppingList() {
   }
   
   function removeShoppingTrash() {
-  shoppingList = shoppingList.filter((item) => item._id !== shoppingBook._id);
+  shoppingList = shoppingList.filter((item) => item.id !== shoppingBook.id);
   localStorage.setItem('shopping-trash', JSON.stringify(shoppingList));
   }
+
+  export {shoppingList};

@@ -404,11 +404,13 @@
   }
 } */
 
+
   @media screen and (min-width: 768px) {
     .book-shop {
       width: 32px;
       height: 30px;
     }
+
   }
 
 
@@ -419,7 +421,10 @@
 
   /* .autor-link-shoppingList .shop-book-autor {
     font-size: 5px;
+
   } */
+
+
 
 
 @media screen and (min-width: 1440px) {

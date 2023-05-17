@@ -34,7 +34,7 @@
   
       }}
 
-  @media screen and (min-width: 375px){
+  @media screen and (max-width: 375px){
     .btn-shop-list{
       width: 38px;
       height: 38px;

@@ -100,6 +100,7 @@ export async function getBookById(bookId = "") {
         bookImage: resp.data["book_image"],
         categoryName: resp.data["list_name"],
         description: resp.data.description,
+        
         buyLinks: resp.data["buy_links"].filter((obj) => {
             return (
                 obj.name === "Amazon" ||
