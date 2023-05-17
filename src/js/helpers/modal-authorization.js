@@ -1,5 +1,3 @@
-import {  checkUserAuth } from "./sign-in-modal";
-
 const registerModalOpenBtn = document.querySelector('[data-modal-open]');
 const modalCloseBtn = document.querySelector('[data-modal-close]');
 const modal = document.querySelector('[data-modal]');
