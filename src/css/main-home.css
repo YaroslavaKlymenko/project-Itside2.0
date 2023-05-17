@@ -128,11 +128,11 @@
   letter-spacing: -0.04em;
   text-transform: uppercase;
 
-  color: #111111;
+  color: var(--border-color);
 }
 
 .dark-theme .title-book {
-  color: var(--text-color);
+  color: var(--border-color);
 }
 
 .author {
@@ -211,17 +211,18 @@
   text-align: center;
   text-transform: uppercase;
 
-  color: #111111;
+  color: var(--border-color);
   border: 2px solid #4f2ee8;
   border-radius: 40px;
+  background-color: var(--background-main);
 
   transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark-theme .btn-seemore {
-  color: #ffffff;
-  background-color: var(--panel-bg-color);
+  color: var(--border-color);
+  background-color: var(--background-main);
   transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -245,6 +246,10 @@
   object-fit: cover;
   object-position: center top;
 }
+
+/* .dark-theme .item-book-select {
+  color: var(--text-color);
+} */
 
 @media screen and (min-width: 768px) {
   .item-book-select {
@@ -329,14 +334,15 @@
   line-height: 1.12;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: var(--H2-textcolor);
+  color: var(--border-color);
 
   margin-bottom: 4px;
 }
 
 .dark-theme .book-tittle {
-  color: var(--text-color);
+  color: var(--border-color);
 }
+
 .book-author {
   font-family: 'DM Sans Regular';
   font-style: italic;
