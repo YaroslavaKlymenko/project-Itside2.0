@@ -46,7 +46,7 @@ async function handelSignInUserAccount(e) {
         }
       };
   }
-  console.log(auth);
+  
   
   function checkUserAuth() {
     onAuthStateChanged(auth, user => {
