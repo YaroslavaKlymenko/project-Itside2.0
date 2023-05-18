@@ -55,23 +55,24 @@ function onCtegoryLinkClick(e) {
 
 function createMarkupForBooksByCategory(arr) {
     return arr
-        .map(
-            ({ book_image, title, list_name, author, _id }) => `
+      .map(
+        ({ book_image, title, list_name, author, _id }) => `
         <li class="book-list__item" data-id="${_id}" >
                 <div class="book-thumb" >
                     <img
                     class="book-img"
                     src="${book_image}"
+                    loading="lazy"
                     width="335"
-                    alt=""
+                    alt="${title}"
                     />
                     <div class="book-overlay">quick view</div>
                 </div>
                 <h3 class="book-tittle">${title}</h3>
                 <p class="book-author">${author}</p>
         </li>`
-        )
-        .join("");
+      )
+      .join('');
 }
 
 document
