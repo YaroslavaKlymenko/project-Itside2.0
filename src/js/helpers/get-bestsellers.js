@@ -48,7 +48,7 @@ export function createMarkupOneCategory(arr_books) {
       ({ author, book_image, title, _id }) =>
         `<li class="item-book js-item-book js-book-card" data-id="${_id}">
           <div class="book-thumb js-item-book">
-           <img class="pict-book js-item-book  js-open-modal-click" src="${book_image}" alt="${title}">
+           <img class="pict-book js-item-book js-open-modal-click" src="${book_image}" loading="lazy" alt="${title}">
            <div class="book-overlay js-item-book js-open-modal-click">quick view</div>
           </div>
           <h4 class="title-book js-item-book">${title}</h4>

@@ -44,17 +44,17 @@ function modalCartBoock(book) {
         <p class="modal-content-autur"><b>${book.author}</b></p>
         <p class="modal-content-abst"><b>${book.description}</b></p>
         <ul class="modal-link">
-          <li>
+          <li class="modal-link__item">
             <a class="modal-link amazon" href="${book.buyLinks[0].url}" target="_blank">
               <img class="modal-link-icon" src="${amazonPng}"19"></img>
             </a>
           </li>
-          <li>
+          <li class="modal-link__item">
             <a class="modal-link apple" href="${book.buyLinks[1].url}" target="_blank">
               <img class="modal-link-icon" src="${appleStorePng}" alt="apple shop" width="33" height="32"></img>
             </a>
           </li>
-          <li>
+          <li class="modal-link__item">
             <a class="modal-link shop" href="${book.buyLinks[2].url}" target="_blank">
               <img class="modal-link-icon" src="${bookShopPng}" alt="book shop" width="38" height="36"></img>
             </a>
