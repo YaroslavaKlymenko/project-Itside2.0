@@ -1,11 +1,21 @@
 import Notiflix from 'notiflix';
+import { openModal } from './modal-window';
+import { getBookById } from './get-data';
 import { listCategories, titleSection, BASE_URL } from './get-bestsellers';
-const listSelectCategory = document.querySelector('.list-select-category');
+export const listSelectCategory = document.querySelector('.js-books-list');
+import { addLoader, removeLoader } from '../helpers/loader';
 
-listCategories.addEventListener('click', onLoadOneCategory);
+listSelectCategory.addEventListener('click', onLoadOneCategory);
 
-function onLoadOneCategory(evt) {
-  console.log(evt.target);
+export function onLoadOneCategory(evt) {
+  if (evt.target.classList.contains('js-item-book')) {
+    const bookCard =
+      evt.target.closest('.item-book') ??
+      evt.target.closest('.item-book-select');
+
+    const bookId = bookCard.dataset.id;
+    getBookById(bookId).then(data => openModal(data));
+  }
   // перевіряємо клік по кнопке
   if (evt.target.nodeName !== 'BUTTON') {
     return;
@@ -24,8 +34,25 @@ function onLoadOneCategory(evt) {
     // знаходимо усі інші елементи масиву і з'єднаємо елементи в строку
     const titel = arrWordsTitle.slice(0, -1).join(' ');
 
+    const getAllCategoriesChild = document.querySelector('.categories-list-js');
+    const arrChild = getAllCategoriesChild.children;
+
+    [...arrChild].find(item => {
+      if (item.firstChild.textContent === titelCategory) {
+        const selectedCategoryLink = document.querySelector(
+          '.categories-list__item.is-active'
+        );
+        if (selectedCategoryLink) {
+          selectedCategoryLink.classList.remove('is-active');
+        }
+        item.classList.add('is-active');
+        return;
+      }
+    });
+
     // робимо фетч запит
     async function getBooksOneCategory() {
+      addLoader();
       const resps = await fetch(
         `${BASE_URL}/category?category=${selectCategory}`
       );
@@ -48,11 +75,13 @@ function onLoadOneCategory(evt) {
           'beforeend',
           createMarkupSelectCategory(resp)
         );
+        removeLoader();
       })
       .catch(() => {
         Notiflix.Notify.failure(`Sorry, search failed. Please try again.`);
       });
-    removeSeemoreListener();
+    return;
+    // removeSeemoreListener();
   }
 }
 
@@ -71,11 +100,14 @@ function createMarkupSelectCategory(arr_select_books) {
   return arr_select_books
     .map(
       ({ author, book_image, title, _id }) =>
-        `<li class="item-book-select" data-id="${_id}">
-     <img class="pict-book" src="${book_image}" alt="${title}">
-     <h4 class="title-book">${title}</h4>
-     <p class="author">${author}</p>
-    </li>`
+        `<li class="item-book-select" data-id="${_id}" >
+          <div class="book-thumb js-item-book" >
+            <img class="pict-book" src="${book_image}" loading="lazy" alt="${title}">
+            <div class="book-overlay js-item-book">quick view</div>
+          </div>
+          <h4 class="title-book">${title}</h4>
+          <p class="author">${author}</p>
+        </li>`
     )
     .join('');
 }
@@ -84,3 +116,6 @@ function createMarkupSelectCategory(arr_select_books) {
 function changeTitle(beginWords, lastWord) {
   titleSection.innerHTML = `${beginWords} <span class="titel-span">${lastWord}</span>`;
 }
+
+// const getAllCategoriesChild = document.querySelectorAll('.categories-list-js');
+// console.log(getAllCategoriesChild);

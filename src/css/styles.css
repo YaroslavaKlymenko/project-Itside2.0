@@ -19,7 +19,8 @@
 @import url('./modal-window.css');
 @import url('./authorization-modal.css');
 @import url('./authorization-backdrop.css');
-
+@import url('./pagination-shop-list.css');
+@import url('./scrollup.css');
 
 :root {
   font-family: 'DM Sans Regular', sans-serif;
@@ -35,9 +36,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
+  --border-color: #111111;
   --background-header: rgb(255, 255, 255);
-  --background-main: rgba(246, 246, 246, 1);
+  --background-main: rgb(245, 245, 245);
   --main-textcolor: rgba(17, 17, 17, 1);
   --H2-textcolor: rgb(17, 17, 17);
   --main-color: rgb(79, 46, 232);
@@ -48,6 +49,7 @@
 
 body {
   background: var(--background-main);
+  min-height: 100vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -81,14 +83,22 @@ body {
 }
 
 :root[theme='dark'] {
-  --panel-bg-color: rgba(17, 17, 17, 1);
+  --panel-bg-color: #202024;
   --container-bg-color: rgba(32, 32, 36, 1);
+  --background-main: #202024;
   --text-color: #ffffff;
+  --background-header: #000000;
+  --H2-textcolor: #ffffff;
+  --border-color: #ffffff;
+  --main-textcolor: #ffffff;
+  --hover-button: rgb(234, 198, 69);
 }
 
 @media (min-width: 768px) {
   .aside-flex {
+    width: 704px;
     display: flex;
+    grid-gap: 0 32px;
   }
 }
 
@@ -99,6 +109,8 @@ body {
   }
 
   .aside-flex {
+    width: 356px;
     display: block;
+    grid-gap: 0;
   }
 }
